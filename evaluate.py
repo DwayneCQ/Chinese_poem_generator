@@ -24,7 +24,7 @@ class EVALUATE_MODEL(MODEL):
 
         # loss
         loss = tf.contrib.legacy_seq2seq.sequence_loss_by_example([logits], [targets],
-                                                                  [tf.ones_like(targets, dtype=tf.float32)])
+                                                                  [tf.ones_like(targets, dtype=tf.float32)])# 创造一个跟targets的shape相同的全是1的矩阵
         globalStep = tf.Variable(0, trainable=False)
         addGlobalStep = globalStep.assign_add(1)
 
